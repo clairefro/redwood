@@ -39,6 +39,7 @@ export interface BrowserTargetPaths {
 
 export interface Paths {
   cache: string
+  typesMirrorDir: string
   types: string
   globals: string
   base: string
@@ -144,6 +145,7 @@ export const getPaths = (BASE_DIR: string = getBaseDir()): Paths => {
   return {
     base: BASE_DIR,
     cache,
+    typesMirrorDir: path.join(BASE_DIR, '.redwood/mirror'),
     types,
     globals,
     api: {

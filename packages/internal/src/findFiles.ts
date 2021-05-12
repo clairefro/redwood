@@ -19,9 +19,9 @@ export const findCells = (webSrcDir: string = getPaths().web.src) => {
     .map((p) => {
       const code = fs.readFileSync(p, 'utf-8')
       const exports = getNamedExports(code)
-      const exportedQUERY = exports.findIndex((v) => v.name === 'QUERY') !== -1 //?
+      const exportedQUERY = exports.findIndex((v) => v.name === 'QUERY') !== -1
       const exportedSuccess =
-        exports.findIndex((v) => v.name === 'Success') !== -1 //?
+        exports.findIndex((v) => v.name === 'Success') !== -1
       if (exportedQUERY && exportedSuccess) {
         return p
       }
